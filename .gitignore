@@ -1,0 +1,10 @@
+.DS_Store
+*.bak
+*.log
+*.out
+*~
+*.pyc
+settings/local_settings.py
+bootstrap*.css
+/node_modules/
+.DS_Store
