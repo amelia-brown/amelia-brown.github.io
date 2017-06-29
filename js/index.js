@@ -1,3 +1,3 @@
 import '../styles'
+import 'normalize.css'
 
-console.log('hello-world')

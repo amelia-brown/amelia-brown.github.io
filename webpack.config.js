@@ -35,11 +35,11 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.(scss|sass)$/,
+        test: /\.(css|scss|sass)$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
-            'css-loader?modules&importLoaders=2&localIdentName=[name]__[local]___[hash:base64:5]',
+            'css-loader',
             'postcss-loader',
             'sass-loader',
           ]

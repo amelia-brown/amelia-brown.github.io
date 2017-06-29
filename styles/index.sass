@@ -1,0 +1,58 @@
+@import '_colors'
+
+html
+  background-color: $grey
+
+.wrapper
+  display: flex
+  align-items: flex-start
+
+.landing
+  min-height: 100vh
+  background-color: $grey
+
+.main
+  flex: 1 1 auto
+  display: flex
+  align-items: flex-start
+  flex-wrap: wrap
+
+.fp-section
+  min-height: 100vh
+  background-color: $grey
+  color: $black
+  flex: 1 0 100%
+  display: flex
+  align-items: center
+  justify-content: center
+  &:nth-child(odd)
+    background-color: $black
+    color: $white
+
+.content
+  margin: 64px 24px
+  border: 1px solid red
+
+.scroll-content
+  width: 264px
+  height: 300%
+  background: $gradient
+
+
+
+// TYPOGRAPHY STYLES
+
+.mono
+  font-family: 'Oxygen Mono', monospace;
+
+.title
+  @extend .mono
+  font-size: 32px
+
+.heading
+  @extend .mono
+  font-size: 24px
+
+.copy
+  @extend .mono
+  font-size: 16px
