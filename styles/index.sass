@@ -30,8 +30,12 @@ html
     color: $white
 
 .content
-  margin: 64px 24px
-  border: 1px solid red
+  box-sizing: border-box
+  padding: 64px 64px
+  height: 100%
+  display: flex
+  flex-direction: column
+  justify-content: space-between
 
 .scroll-content
   width: 264px
@@ -56,3 +60,44 @@ html
 .copy
   @extend .mono
   font-size: 16px
+
+
+
+// Landing styles
+
+.header
+  width: 600px
+
+.header--title
+  @extend .title
+  padding: 24px 0
+  border-bottom: 2px solid $black
+
+.header--subtitle
+  @extend .heading
+  padding: 16px 0
+  text-align: right
+
+.navigation
+  display: flex
+  height: 104px
+  align-items: flex-start
+  justify-content: space-between
+
+.navigation-item
+  @extend .heading
+  width: 200px
+  border-top: 2px solid $black
+  padding-top: 24px
+  color: $black
+  text-decoration: none
+  transition: border-top 0.24s ease
+  &:nth-child(1)
+    &:hover
+      border-top: 24px solid $color-1
+  &:nth-child(2)
+    &:hover
+      border-top: 24px solid $color-3
+  &:nth-child(3)
+    &:hover
+      border-top: 24px solid $color-5
