@@ -49,6 +49,7 @@ html {
 .content {
   box-sizing: border-box;
   padding: 64px 64px;
+  width: 100%;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -66,16 +67,16 @@ html {
   height: 300%;
   background: linear-gradient(180deg, #00e676, #c5f460, #ffab91, #94f2f7, #833fff); }
 
-.mono, .title, .header--title, .heading, .header--subtitle, .navigation-item, .copy {
+.mono, .title, .header--title, .heading, .header--subtitle, .navigation-item, .content-title, .copy, .content-copy {
   font-family: 'Oxygen Mono', monospace; }
 
 .title, .header--title {
   font-size: 32px; }
 
-.heading, .header--subtitle, .navigation-item {
+.heading, .header--subtitle, .navigation-item, .content-title {
   font-size: 24px; }
 
-.copy {
+.copy, .content-copy {
   font-size: 16px; }
 
 .header {
@@ -114,6 +115,13 @@ html {
     border-top: 24px solid #ffab91; }
   .navigation-item:nth-child(3):hover {
     border-top: 24px solid #833fff; }
+
+.content-text {
+  width: 600px;
+  border-bottom: 2px solid #e6efe9; }
+
+.content-copy {
+  margin: 48px 0; }
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
