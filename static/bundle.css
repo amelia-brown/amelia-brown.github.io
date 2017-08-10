@@ -48,7 +48,7 @@ html {
 
 .content {
   box-sizing: border-box;
-  padding: 64px 64px;
+  padding: 24px;
   width: 100%;
   height: 100%;
   display: -webkit-box;
@@ -61,11 +61,40 @@ html {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between; }
+  .content-center {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+
+@media (min-width: 640px) {
+  .content {
+    padding: 64px; } }
 
 .scroll-content {
-  width: 264px;
+  width: 20%;
   height: 300%;
-  background: linear-gradient(180deg, #00e676, #c5f460, #ffab91, #94f2f7, #833fff); }
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative; }
+
+.gradient {
+  position: absolute;
+  width: 200%;
+  height: 110%;
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
+  background: linear-gradient(180deg, #00e676, #c5f460, #ffab91, #94f2f7, #833fff, #00e676, #c5f460); }
 
 .mono, .title, .header--title, .heading, .header--subtitle, .navigation-item, .content-title, .copy, .content-copy {
   font-family: 'Oxygen Mono', monospace; }
@@ -77,10 +106,11 @@ html {
   font-size: 24px; }
 
 .copy, .content-copy {
-  font-size: 16px; }
+  font-size: 16px;
+  line-height: 1.5; }
 
 .header {
-  width: 600px; }
+  max-width: 600px; }
 
 .header--title {
   padding: 24px 0;
@@ -103,25 +133,66 @@ html {
           justify-content: space-between; }
 
 .navigation-item {
-  width: 200px;
-  border-top: 2px solid #212121;
+  max-width: 200px;
   padding-top: 24px;
   color: #212121;
   text-decoration: none;
-  transition: border-top 0.24s ease; }
-  .navigation-item:nth-child(1):hover {
-    border-top: 24px solid #00e676; }
-  .navigation-item:nth-child(2):hover {
-    border-top: 24px solid #ffab91; }
-  .navigation-item:nth-child(3):hover {
-    border-top: 24px solid #833fff; }
+  margin: 0 8px;
+  position: relative; }
+  .navigation-item::after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    height: 2px;
+    background: #212121;
+    width: 100%;
+    top: 0;
+    transition: background 0.24s ease, height 0.24s ease; }
+  .navigation-item:nth-child(1):hover::after {
+    background: #00e676;
+    height: 10px; }
+  .navigation-item:nth-child(2):hover::after {
+    background: #ffab91;
+    height: 10px; }
+  .navigation-item:nth-child(3):hover::after {
+    background: #833fff;
+    height: 10px; }
+
+@media (min-width: 640px) {
+  .navigation-item {
+    min-width: 128px; } }
 
 .content-text {
-  width: 600px;
+  max-width: 600px;
+  border-bottom: 2px solid #212121; }
+
+.fp-section:nth-child(odd) .content-text {
+  max-width: 600px;
   border-bottom: 2px solid #e6efe9; }
 
 .content-copy {
   margin: 48px 0; }
+
+.link {
+  color: #00b35c;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 0;
+  transition: color 0.5s ease, border-bottom 0.5s ease; }
+  .link:hover {
+    color: #ffab91;
+    border-bottom: 1px solid #ffab91; }
+
+.fp-section:nth-child(odd) .link {
+  color: #ffab91; }
+  .fp-section:nth-child(odd) .link:hover {
+    color: #833fff;
+    border-bottom: 1px solid #833fff; }
+
+.list {
+  padding-left: 0; }
+  .list li {
+    list-style: none; }
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */

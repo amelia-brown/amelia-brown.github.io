@@ -31,19 +31,35 @@ html
 
 .content
   box-sizing: border-box
-  padding: 64px 64px
+  padding: 24px
   width: 100%
   height: 100%
   display: flex
   flex-direction: column
   justify-content: space-between
+  &-center
+    justify-content: center
+    align-items: center
+
+@media (min-width: 640px)
+  .content
+    padding: 64px
 
 .scroll-content
-  width: 264px
+  width: 20%
   height: 300%
+  overflow: hidden
+  display: flex
+  align-items: center
+  justify-content: center
+  position: relative
+
+.gradient
+  position: absolute
+  width: 200%
+  height: 110%
+  filter: blur(5px)
   background: $gradient
-
-
 
 // TYPOGRAPHY STYLES
 
@@ -61,13 +77,14 @@ html
 .copy
   @extend .mono
   font-size: 16px
+  line-height: 1.5
 
 
 
 // Landing styles
 
 .header
-  width: 600px
+  max-width: 600px
 
 .header--title
   @extend .title
@@ -87,27 +104,54 @@ html
 
 .navigation-item
   @extend .heading
-  width: 200px
-  border-top: 2px solid $black
+  //min-width: 104px
+  max-width: 200px
   padding-top: 24px
   color: $black
   text-decoration: none
-  transition: border-top 0.24s ease
+  margin: 0 8px
+  position: relative
+  &::after
+    content: ' '
+    display: block
+    position: absolute
+    height: 2px
+    background: $black
+    width: 100%
+    top: 0
+    transition: background 0.24s ease, height 0.24s ease
   &:nth-child(1)
     &:hover
-      border-top: 24px solid $color-1
+      &::after
+        background: $color-1
+        height: 10px
   &:nth-child(2)
     &:hover
-      border-top: 24px solid $color-3
+      &::after
+        background: $color-3
+        height: 10px
   &:nth-child(3)
     &:hover
-      border-top: 24px solid $color-5
+      &::after
+        background: $color-5
+        height: 10px
+
+@media (min-width: 640px)
+  .navigation-item
+    min-width: 128px
+
 
 
 // content sections
 .content-text
-  width: 600px
-  border-bottom: 2px solid $grey
+  max-width: 600px
+  border-bottom: 2px solid $black
+
+.fp-section:nth-child(odd)
+  .content-text
+    max-width: 600px
+    border-bottom: 2px solid $grey
+
 
 .content-title
   @extend .heading
@@ -115,3 +159,25 @@ html
 .content-copy
   @extend .copy
   margin: 48px 0
+
+.link
+  color: darken($color-1, 10%)
+  font-weight: 500
+  text-decoration: none
+  border-bottom: 0
+  transition: color 0.5s ease, border-bottom 0.5s ease
+  &:hover
+    color: $color-3
+    border-bottom: 1px solid $color-3
+
+.fp-section:nth-child(odd)
+  .link
+    color: $color-3
+    &:hover
+      color: $color-5
+      border-bottom: 1px solid $color-5
+
+.list
+  padding-left: 0
+  li
+    list-style: none
