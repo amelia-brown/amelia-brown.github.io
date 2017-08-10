@@ -103,11 +103,17 @@ html {
   font-size: 32px; }
 
 .heading, .header--subtitle, .navigation-item, .content-title {
-  font-size: 24px; }
+  font-size: 28px; }
 
 .copy, .content-copy {
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.5; }
+
+@media (min-width: 640px) {
+  .heading, .header--subtitle, .navigation-item, .content-title {
+    font-size: 24px; }
+  .copy, .content-copy {
+    font-size: 16px; } }
 
 .header {
   max-width: 600px; }
